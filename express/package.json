@@ -1,0 +1,17 @@
+{
+    "name": "prakash",
+    "version": "1.0.0",
+    "description": "its my frist website",
+    "main": "app.js",
+    "scripts": {
+        "nodemon": "nodemon index8.js"
+    },
+    "author": "pro",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "hbs": "^4.1.1",
+        "nodemon": "^2.0.7"
+
+    }
+}

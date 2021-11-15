@@ -1,0 +1,15 @@
+{
+    "name": "npm",
+    "version": "1.0.0",
+    "description": "om prakash npm",
+    "main": "index.js",
+    "scripts": {
+        "nodemon": "nodemon index.js"
+    },
+    "author": "om prakash",
+    "license": "ISC",
+    "dependencies": {
+        "chalk": "^4.1.1",
+        "validator": "^13.6.0"
+    }
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/add">add user</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <% if(usersnode != '' ){ %>
+        <div class="container col-8 my-3">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="">s.n</th>
+                        <th scope="">name</th>
+                        <th scope="">Email</th>
+                        <th scope="">phone</th>
+                        <th scope="">image</th>
+                        <th scope="">modify</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% usersnode.forEach((row,index)=>{ %>
+                        <tr class="my-3">
+                            <th scope="">
+                                <%= index %>
+                            </th>
+                            <td>
+                                <%= row.name %>
+                            </td>
+                            <td>
+                                <%= row.email %>
+                            </td>
+                            <td>
+                                <%= row.phone %>
+                            </td>
+                            <td><img src="<%= row.image %>" width="50" class="img-thunbnail"></td>
+                            <td><a href="/edit/<%= row._id %>" class="text-success"><i class="fas fa-edit fa-lg ml-2"></i>edit</a>
+                                <a href="/delete/<%= row._id %>" class="text-danger"><i class="fas fa-trash fa-lg "></i>delete</a>
+                            </td>
+                        </tr>
+                        <%})%>
+
+                </tbody>
+            </table>
+        </div>
+        <% } else{ %>
+            <h1 class="text-center text-secondary mt-5">no user data in detabase</h1>
+            <%} %>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+                <script>
+                    $(document).ready(function() {
+                        $("table").DataTable({
+                            order: [0, 'desc']
+                        });
+                    });
+                </script>
+</body>
+
+</html>

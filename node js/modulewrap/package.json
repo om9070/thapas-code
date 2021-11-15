@@ -1,0 +1,12 @@
+{
+    "name": "modulewrap",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index1.js",
+    "scripts": {
+        "nodemon": "nodemon http.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
